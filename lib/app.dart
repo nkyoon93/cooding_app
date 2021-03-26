@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
+import 'package:cooding_app/ui/screens/home.dart';
 import 'package:cooding_app/ui/screens/login.dart';
-import 'package:cooding_app/ui/screens/theme.dart'; // Route for screen cooding app
+import 'package:cooding_app/ui/theme.dart'; // Route for screen cooding app
 
 class RecipesApp extends StatelessWidget {
   @override
@@ -12,7 +12,7 @@ class RecipesApp extends StatelessWidget {
       theme: buildTheme(), // New code
       initialRoute: '/login',
       routes: {
-        '/': (context) => LoginScreen(),
+        '/': (context) => HomeScreen(),
         '/login': (context) => LoginScreen(),
       },
     );

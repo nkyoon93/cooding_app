@@ -5,7 +5,7 @@ ThemeData buildTheme() {
   // in this method:
   TextTheme _buildTextTheme(TextTheme base) {
     return base.copyWith(
-      headline: base.headline.copyWith(
+      headline5: base.headline5.copyWith(
         fontFamily: 'Merriweather',
         fontSize: 40.0,
         color: const Color(0xFF807a6b),
