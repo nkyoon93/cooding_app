@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'package:cooding_app/ui/widgets/google_sign_in_button.dart'; // New code
+
 class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // New private method which includes the background image:
     BoxDecoration _buildBackground() {
       return BoxDecoration(
         image: DecorationImage(
@@ -16,13 +17,12 @@ class LoginScreen extends StatelessWidget {
     Text _buildText() {
       return Text(
         'Recipes',
+        style: Theme.of(context).textTheme.headline,
         textAlign: TextAlign.center,
       );
     }
 
     return Scaffold(
-      // We do not use backgroundColor property anymore.
-      // New Container widget wraps our Center widget:
       body: Container(
         decoration: _buildBackground(),
         child: Center(
@@ -31,11 +31,10 @@ class LoginScreen extends StatelessWidget {
             children: <Widget>[
               _buildText(),
               SizedBox(height: 50.0),
-              MaterialButton(
-                color: Colors.white,
-                child: Text("Sign In with Google"),
-                onPressed: () => print("Button pressed."),
-              ),
+              // Passing function callback as constructor argument:
+              google_sign_in_button( // New code
+                onPressed: () => print("Button pressed."), // New code
+              ), // New code
             ],
           ),
         ),
