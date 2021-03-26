@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:cooding_app/ui/screens/login.dart';
-import 'package:cooding_app/ui/screens/theme.dart'; // New code
+import 'package:cooding_app/ui/screens/theme.dart'; // Route for screen cooding app
 
 class RecipesApp extends StatelessWidget {
   @override
