@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:cooding_app/ui/widgets/google_sign_in_button.dart'; // New code
+import 'package:cooding_app/ui/screens/google_sign_in_button.dart'; // New code
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -16,8 +16,8 @@ class LoginScreen extends StatelessWidget {
 
     Text _buildText() {
       return Text(
-        'Recipes',
-        style: Theme.of(context).textTheme.headline,
+        'Cooding',
+        style: Theme.of(context).textTheme.headline5,
         textAlign: TextAlign.center,
       );
     }
@@ -32,7 +32,7 @@ class LoginScreen extends StatelessWidget {
               _buildText(),
               SizedBox(height: 50.0),
               // Passing function callback as constructor argument:
-              google_sign_in_button( // New code
+              GoogleSignInButton( // New code
                 onPressed: () => print("Button pressed."), // New code
               ), // New code
             ],
