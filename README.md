@@ -1,6 +1,6 @@
 # cooding_app
 
-A new D.OC  Flutter application.
+A new D.O.C  Flutter application.
 
 ## Getting Started
 
