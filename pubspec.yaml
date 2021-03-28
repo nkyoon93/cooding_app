@@ -44,7 +44,7 @@ flutter:
   # the material Icons class.
   uses-material-design: true
   assets:
-    - assets/cd.jpg
+    - assets/main_cd.png
   fonts: # New
     - family: Merriweather
       fonts:

@@ -9,7 +9,7 @@ class GoogleSignInButton extends StatelessWidget {
   Widget build(BuildContext context) {
     Image _buildLogo() {
       return Image.asset(
-        "assets/cd.jpg",
+        "assets/main_cd.png",
         height: 18.0,
         width: 18.0,
       );

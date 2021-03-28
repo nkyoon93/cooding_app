@@ -37,8 +37,11 @@ class HomeScreenState extends State<HomeScreen> {
             child: ListView.builder(
               itemCount: recipesList.length,
               itemBuilder: (BuildContext context, int index) {
-                return ListTile(
-                  title: Text(recipesList[index].name),
+                // New code:
+                return new RecipeCard(
+                  recipe: recipesList[index],
+                  inFavorites: userFavorites.contains(recipesList[index].id),
+                  onFavoriteButtonPressed: _handleFavoritesListChanged,
                 );
               },
             ),
