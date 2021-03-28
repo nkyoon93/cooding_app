@@ -1,3 +1,4 @@
+import 'package:cooding_app/ui/widgets/recipe_card.dart';
 import 'package:flutter/material.dart';
 
 import 'package:cooding_app/model/recipe.dart';

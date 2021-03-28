@@ -47,7 +47,7 @@ class RecipeCard extends StatelessWidget {
                 Icon(Icons.timer, size: 20.0),
                 SizedBox(width: 5.0),
                 Text(
-                  recipe.duration.toString(),
+                  recipe.getDurationString, // New code
                 ),
               ],
             ),

@@ -32,6 +32,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  duration: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -45,6 +46,8 @@ flutter:
   uses-material-design: true
   assets:
     - assets/main_cd.png
+    - assets/glogo.png
+    - assets/calc.png
   fonts: # New
     - family: Merriweather
       fonts:

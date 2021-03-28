@@ -16,7 +16,7 @@ class LoginScreen extends StatelessWidget {
 
     Text _buildText() {
       return Text(
-        'Cooding',
+        'Delicious Cooding!',
         style: Theme.of(context).textTheme.headline5,
         textAlign: TextAlign.center,
       );

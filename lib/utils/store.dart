@@ -20,7 +20,7 @@ List<Recipe> getRecipes() {
         'Step 3',
       ],
       imageURL:
-      'https://',
+      'https://png.pngtree.com/element_our/20190602/ourmid/pngtree-hand-drawn-black-calculator-illustration-image_1401898.jpg',
     ),
     Recipe(
       id: '1',
@@ -39,7 +39,7 @@ List<Recipe> getRecipes() {
         'Step 3',
       ],
       imageURL:
-      'https://images.unsplash.com/photo-1',
+      'https://i.pinimg.com/originals/be/53/af/be53af321ef490d67a7a6adefc7f7ecd.png',
     ),
 
   ];
