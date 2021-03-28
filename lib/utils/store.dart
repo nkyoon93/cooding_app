@@ -20,7 +20,7 @@ List<Recipe> getRecipes() {
         'Step 3',
       ],
       imageURL:
-      'https://png.pngtree.com/element_our/20190602/ourmid/pngtree-hand-drawn-black-calculator-illustration-image_1401898.jpg',
+      'https://lh3.googleusercontent.com/proxy/Sys-AA9ADi0-5fp4f2yqzByFEuqFewbrFPknPMRYUL11HFmoK1N2MY-4LLtSvuse33grHcfQrQsiRem3toEL2Uc0NWK080jwo4No9CUgVYzzURueXb7ELirb-5WWrTfiOaHDjqV9Rp2ABUGom9ttxTiMAu9yERMx7J64WzgzPQQ74qA0jGGSGvMfOdMV5J5hNx12xg',
     ),
     Recipe(
       id: '1',
@@ -39,7 +39,7 @@ List<Recipe> getRecipes() {
         'Step 3',
       ],
       imageURL:
-      'https://i.pinimg.com/originals/be/53/af/be53af321ef490d67a7a6adefc7f7ecd.png',
+      'https://img.icons8.com/ios/452/ftp-server.png',
     ),
 
   ];
