@@ -7,7 +7,7 @@ ThemeData buildTheme() {
       headline5: base.headline5.copyWith(
         fontFamily: 'Merriweather',
         fontSize: 40.0,
-        color: const Color(0xFF807A6B),
+        color: const Color(0xFFC4DBE7),
       ),
       // New code:
       // Used for the recipes' title:

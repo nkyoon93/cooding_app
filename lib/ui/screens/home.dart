@@ -66,7 +66,7 @@ class HomeScreenState extends State<HomeScreen> {
               labelColor: Theme.of(context).indicatorColor,
               tabs: [
                 Tab(icon: Icon(Icons.restaurant, size: _iconSize)),
-                Tab(icon: Icon(Icons.local_drink, size: _iconSize)),
+                Tab(icon: Icon(Icons.account_circle, size: _iconSize)),
                 Tab(icon: Icon(Icons.favorite, size: _iconSize)),
                 Tab(icon: Icon(Icons.settings, size: _iconSize)),
               ],

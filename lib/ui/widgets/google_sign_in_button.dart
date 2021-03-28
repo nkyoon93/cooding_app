@@ -10,8 +10,8 @@ class GoogleSignInButton extends StatelessWidget {
     Image _buildLogo() {
       return Image.asset(
         "assets/glogo.png",
-        height: 22.0,
-        width: 22.0,
+        height: 34.0,
+        width: 34.0,
       );
     }
 
