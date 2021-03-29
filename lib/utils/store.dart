@@ -1,53 +1,34 @@
-import 'package:cooding_app/model/recipe.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
-List<Recipe> getRecipes() {
-  return [
-    Recipe(
-      id: '0',
-      type: RecipeType.easy,
-      name: 'Chat program',
-      duration: Duration(minutes: 30),
-      ingredients: [
-        'Socket',
-        'python',
-        'TCP/UDP',
-        'pycham community',
+Future<bool> updateFavorites(String uid, String recipeId) {
+  DocumentReference favoritesReference =
+  Firestore.instance.collection('users').document(uid);
 
-      ],
-      preparation: [
-        'Step 1',
-        'Step 2',
-        'Step 3',
-      ],
-      imageURL:
-      'https://lh3.googleusercontent.com/proxy/Sys-AA9ADi0-5fp4f2yqzByFEuqFewbrFPknPMRYUL11HFmoK1N2MY-4LLtSvuse33grHcfQrQsiRem3toEL2Uc0NWK080jwo4No9CUgVYzzURueXb7ELirb-5WWrTfiOaHDjqV9Rp2ABUGom9ttxTiMAu9yERMx7J64WzgzPQQ74qA0jGGSGvMfOdMV5J5hNx12xg',
-    ),
-    Recipe(
-      id: '1',
-      type: RecipeType.easy,
-      name: 'Web server',
-      duration: Duration(minutes: 30),
-      ingredients: [
-        'flask',
-        'python',
-        'pycham community',
-
-      ],
-      preparation: [
-        'Step 1',
-        'Step 2',
-        'Step 3',
-      ],
-      imageURL:
-      'https://img.icons8.com/ios/452/ftp-server.png',
-    ),
-
-  ];
-}
-
-List<String> getFavoritesIDs() {
-  return [
-    '0',
-    '1',
-  ];
+  return Firestore.instance.runTransaction((Transaction tx) async {
+    DocumentSnapshot postSnapshot = await tx.get(favoritesReference);
+    if (postSnapshot.exists) {
+      // Extend 'favorites' if the list does not contain the recipe ID:
+      if (!postSnapshot.data['favorites'].contains(recipeId)) {
+        await tx.update(favoritesReference, <String, dynamic>{
+          'favorites': FieldValue.arrayUnion([recipeId])
+        });
+        // Delete the recipe ID from 'favorites':
+      } else {
+        await tx.update(favoritesReference, <String, dynamic>{
+          'favorites': FieldValue.arrayRemove([recipeId])
+        });
+      }
+    } else {
+      // Create a document for the current user in collection 'users'
+      // and add a new array 'favorites' to the document:
+      await tx.set(favoritesReference, {
+        'favorites': [recipeId]
+      });
+    }
+  }).then((result) {
+    return true;
+  }).catchError((error) {
+    print('Error: $error');
+    return false;
+  });
 }

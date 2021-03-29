@@ -7,10 +7,9 @@ class RecipesApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       title: 'Recipes',
-      theme: buildTheme(), // New code
-      initialRoute: '/login',
+      theme: buildTheme(),
+      debugShowCheckedModeBanner: false,
       routes: {
         '/': (context) => HomeScreen(),
         '/login': (context) => LoginScreen(),

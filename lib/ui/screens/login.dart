@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:cooding_app/ui/widgets/google_sign_in_button.dart'; // New code
+import 'package:cooding_app/ui/widgets/google_sign_in_button.dart';
+
+import '../../state_widget.dart'; // New code
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -33,11 +35,7 @@ class LoginScreen extends StatelessWidget {
               SizedBox(height: 50.0),
               // Passing function callback as constructor argument:
               GoogleSignInButton(
-                onPressed: () =>
-                // We replace the current page.
-                // After navigating to the replacement, it's not possible
-                // to go back to the previous screen:
-                Navigator.of(context).pushReplacementNamed('/'),
+                onPressed: () => StateWidget.of(context).signInWithGoogle(),
               ), // New code
             ],
           ),

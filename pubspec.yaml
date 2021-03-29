@@ -1,5 +1,5 @@
 name: cooding_app
-description: A new D.OC  Flutter application.
+description: A new D.O.C  Flutter application.
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -23,6 +23,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  duration: ^2.0.0
+  firebase_auth: ^0.6.2+1
+  google_sign_in: ^3.2.2
+  cloud_firestore: ^0.8.2+3
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -32,7 +36,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  duration: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
