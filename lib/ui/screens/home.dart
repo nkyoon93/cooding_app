@@ -159,4 +159,6 @@ class HomeScreenState extends State<HomeScreen> {
     appState = StateWidget.of(context).state;
     return _buildContent();
   }
+
+  SettingsButton(IconData exit_to_app, String s, String displayName, Future<Null> Function() param3) {}
 }
