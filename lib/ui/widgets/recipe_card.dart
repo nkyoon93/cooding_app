@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:cooding_app/ui/widgets/recipe_title.dart';
+import 'package:cooding_app/ui/widgets/recipe_image.dart';
 
 import 'package:cooding_app/model/recipe.dart';
 
@@ -22,45 +24,21 @@ class RecipeCard extends StatelessWidget {
           // Conditional expression:
           // show "favorite" icon or "favorite border" icon depending on widget.inFavorites:
           inFavorites == true ? Icons.favorite : Icons.favorite_border,
-          color: Theme.of(context).iconTheme.color, // New code
+          color: Theme.of(context).iconTheme.color,
         ),
         elevation: 2.0,
-        fillColor: Theme.of(context).buttonColor, // New code
+        fillColor: Theme.of(context).buttonColor,
         shape: CircleBorder(),
       );
     }
 
-    Padding _buildTitleSection() {
-      return Padding(
-        padding: EdgeInsets.all(15.0),
-        child: Column(
-          // Default value for crossAxisAlignment is CrossAxisAlignment.center.
-          // We want to align title and description of recipes left:
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text(
-              recipe.name,
-              style: Theme.of(context).textTheme.headline6,
-            ),
-            // Empty space:
-            SizedBox(height: 10.0),
-            Row(
-              children: [
-                Icon(Icons.timer, size: 20.0),
-                SizedBox(width: 5.0),
-                Text(
-                  recipe.getDurationString,
-                  style: Theme.of(context).textTheme.caption,// New code
-                ),
-              ],
-            ),
-          ],
-        ),
-      );
-    }
-
     return GestureDetector(
-      onTap: () => print("Tapped!"),
+      onTap: () => Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => new DetailScreen(recipe, inFavorites),
+        ),
+      ),
       child: Padding(
         padding: EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
         child: Card(
@@ -72,13 +50,7 @@ class RecipeCard extends StatelessWidget {
               // creating a Stack object:
               Stack(
                 children: <Widget>[
-                  AspectRatio(
-                    aspectRatio: 16.0 / 9.0,
-                    child: Image.network(
-                      recipe.imageURL,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
+                  RecipeImage(recipe.imageURL),
                   Positioned(
                     child: _buildFavoriteButton(),
                     top: 2.0,
@@ -86,7 +58,7 @@ class RecipeCard extends StatelessWidget {
                   ),
                 ],
               ),
-              _buildTitleSection(),
+              RecipeTitle(recipe, 15),
             ],
           ),
         ),
