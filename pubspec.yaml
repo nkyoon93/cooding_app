@@ -29,6 +29,7 @@ dependencies:
   cloud_firestore: ^0.8.2+3
 
 
+
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -36,6 +37,12 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: "^0.8.0"
+
+flutter_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icon_rev2"
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -51,6 +58,8 @@ flutter:
     - assets/main_cd.png
     - assets/glogo.png
     - assets/calc.png
+    - assets/icon_rev2.jpg
+    - assets/login_rev2.jpg
   fonts: # New
     - family: Merriweather
       fonts:
